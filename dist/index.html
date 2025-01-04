@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/6f5b6b5b7b.js" crossorigin="anonymous"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Add in HTML head -->
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+
+
+
+    <!-- swiper css for slider -->
+    <!-- Add Swiper CSS CDN in the <head> -->
+
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        /* Carousel Styling */
+        .swiper-wrapper {
+            width: 100%;
+            padding-bottom: 64px !important;
+            transition-timing-function: linear !important;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        /* Custom Navigation Button Styling */
+        .custom-button {
+            border: 2px solid #4f46e5;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: #4f46e5;
+            transition: background-color 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+
+        .custom-button:hover {
+            background-color: #4f46e5;
+            color: #fff;
+        }
+
+        /* Positioning the Custom Buttons */
+        .custom-navigation {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+        }
+    </style>
+
+
+
+
+    <style>
+        .input-field {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            padding: 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .input-field::placeholder {
+            color: #999;
+        }
+
+        .input-field:focus {
+            border: none;
+            outline: none;
+        }
+
+        .url-input {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            padding: 0;
+            font-size: 16px;
+            color: #333;
+            width: 100%;
+        }
+
+        .url-input::placeholder {
+            color: #999;
+        }
+
+        .url-input:focus {
+            border: none;
+            outline: none;
+        }
+
+        .input-field[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(55%) sepia(11%) saturate(3009%) hue-rotate(329deg) brightness(99%) contrast(87%);
+        }
+
+        .input-field[type="date"]::-webkit-datetime-edit {
+            display: none;
+        }
+
+        .input-field[type="date"]::placeholder {
+            color: #9498a4;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 12px;
+        }
+    </style>
+
+
+    <style>
+        .filter-item {
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .filter-item.hidden {
+            opacity: 0;
+            transform: scale(0.95);
+            pointer-events: none;
+            /* Prevent interaction with hidden items */
+        }
+    </style>
+
+
+
+
+    <!-- FOT TESTIMONAIL-->
+
+    <!-- Swiper CSS for styling the navigation -->
+    <style>
+        .testimonial-card {
+            border: 1px solid #ccc;
+            padding: 20px;
+            position: relative;
+            text-align: center;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .testimonial-footer {
+            margin-top: 20px;
+        }
+
+        .card-navigation {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            width: 30px;
+            height: 30px;
+            background-color: #000;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+        }
+    </style>
+
+
+</head>
+
+<body class="">
+
+    <div class="bg-[#FAF8ED] lg:px-[135px]  px-16 md:px-8    font-poppins" style="font-family:poppins">
+
+        <!--navbar-->
+        <div
+            class=" flex   w-auto lg:items-center lg:py-8 py-8 lg:w-auto sm:flex lg:gap-0 sm:gap-4 md:justify-between lg:justify-between flex-w-[auto]">
+
+            <div class=" flex lg:gap-28 justify-center items-center gap-44 ">
+                <img class="min-w-[100px]" src="./img/logo.png">
+                <div class=" hidden lg:flex">
+                    <ul class="flex lg:gap-16">
+                        <li>
+                            <a href="#" class="group relative block">
+                                <span class="inline-block relative">
+                                    <span
+                                        class="group-hover:border-b-2 group-hover:border-b-[#f66f4d] group-hover:transition group-hover:duration-300 first-letter:block first-letter:border-b-2 first-letter:border-b-[#f66f4d]">H</span>ome
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="group relative block">
+                                <span class="inline-block relative">
+                                    <span
+                                        class="group-hover:border-b-2 group-hover:border-b-[#f66f4d] group-hover:transition group-hover:duration-300 first-letter:block first-letter:border-b-2 first-letter:border-b-[#f66f4d]">A</span>bout
+                                    us
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="group relative block">
+                                <span class="inline-block relative">
+                                    <span
+                                        class="group-hover:border-b-2 group-hover:border-b-[#f66f4d] group-hover:transition group-hover:duration-300 first-letter:block first-letter:border-b-2 first-letter:border-b-[#f66f4d]">D</span>estinations
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="group relative block">
+                                <span class="inline-block relative">
+                                    <span
+                                        class="group-hover:border-b-2 group-hover:border-b-[#f66f4d] group-hover:transition group-hover:duration-300 first-letter:block first-letter:border-b-2 first-letter:border-b-[#f66f4d]">T</span>ours
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="group relative block">
+                                <span class="inline-block relative">
+                                    <span
+                                        class="group-hover:border-b-2 group-hover:border-b-[#f66f4d] group-hover:transition group-hover:duration-300 first-letter:block first-letter:border-b-2 first-letter:border-b-[#f66f4d]">B</span>log
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- <div class="flex gap-4">
+                    <i class=" text-[25px] fa fa-bars text-[#F66F4D] lg:hidden"></i>
+                </div> -->
+            </div>
+
+
+
+            <div class="  lg:flex  sm:flex  ">
+
+
+                <div class="flex gap-4">
+                    <i class=" text-[25px] fa fa-bars text-[#F66F4D] lg:hidden"></i>
+                </div>
+
+
+                <button
+                    class=" hidden lg:flex items-center  gap-2 justify-center border-[1.4px] py-[15px] border-[#F66F4D] text-[#F66F4D] w-[170px] text-[16px] font-[500]  h-[54px] rounded-[27px] hover:text-[#c64a4a]">Book
+                    Now<span class="hover:text-[#c64a4a]"><svg
+                            class="w-[16px] h-[16px] stroke-[#F66F4D] hover:stroke-[#c64a4a] transition-colors duration-300"
+                            style="width: 16px; height: 15px;" xmlns="http://www.w3.org/2000/svg" width="16" height="15"
+                            viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0 8.45744L4.04598 10.2128L13.4253 2.87235L6.06897 11.1702V15L8.82758 11.9681L13.4253 13.5638L16 0L0 8.45744Z"
+                                fill="#F66F4D" />
+                        </svg></span></button>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- hreo section -->
+        <div class="lg:flex-row lg:flex lg:py-28 lg:gap-16  ">
+            <div class="font-sen lg:w-1/2   md:w-1/2  flex flex-col lg:py-10 lg:flex-wrap lg:pr-11 ">
+
+                <p class="text-[#2d3134] font-[700]  lg:leading-[86px] lg:text-[84px]  leading-[50px] text-[50px] ">
+                    Discover the Best
+                    Lovely Places
+                </p>
+                <p class="text-[#5b5f62] font-[400] leading-[28px] text-[18px] py-10 lg:pr-11">Plan and book your
+                    perfect
+                    trip with expert advice, travel tips, destination information and inspiration from us.</p>
+
+                <!--search bar -->
+
+                <div
+                    class="bg-white w-[100%] lg:h-[76px] flex justify-between items-center px-8 pt-3 rounded-[38px] font-inter lg:text-[18px] text-[#2d3134] leading-[17px] font-[500]">
+                    <div class="flex flex-col">
+                        <label>Where</label>
+                        <input type="text" placeholder="center Point, Lo..."
+                            class=" py-2 input-field border-r-[1px] border-[#EAEAEB] text-[12px] text-[#9498a4] leading-[12px] font-[400]"><span
+                            class="relative lg:left-[120px] bottom-5">
+                            <image src="./img/map-icon.png">
+                        </span>
+                    </div>
+                    <div class="flex flex-col">
+                        <label>Date</label>
+                        <input type="date" placeholder="09th March,2021"
+                            class="input-field text-[12px] text-[#9498a4] leading-[12px] font-[400] py-2">
+                    </div>
+                    <button
+                        class="bg-[#F66F4D] text-white rounded-[50%] px-2 py-2][#F66F4D w-[50px] h-[54px] flex justify-center items-center">
+                        <i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+
+            <div>
+            </div>
+            <div class="pt-[50px]">
+                <div class="lg:w-[auto] lg:h-auto"><img src="./img/hero-img.png"></div>
+            </div>
+        </div>
+
+
+        <!-- categories section--->
+        <div class=" pt-[50px] w-[100%] lg:h-[542px]">
+            <div class="lg:flex lg:justify-between   justify-center">
+                <div class="">
+                    <p class="font-inter text-[#2d3134] font-[600] leading-[56px] text-[56px]">Categories</p>
+                    <p
+                        class=" lg:w-1/2 font-inter text-[#5b5f62] font-[400] leading-[26px] text-[16px] py-[20px]  lg:text-left text-center">
+                        Here
+                        are
+                        lots of interesting destinations to visit, but don’t be confused—they’re already grouped by
+                        category.</p>
+                </div>
+                <div class="lg:flex lg:gap-10  flex gap-14 align-items-center justify-center">
+                    <a href="#"
+                        class="w-[54px] h-[54px] flex justify-center items-center border-[1px] border-[#2d3134] rounded-[50%]"><img
+                            src="./img/left-arrow.png"></a>
+                    <a href="#"
+                        class="w-[54px] h-[54px] flex justify-center items-center border-[1px] border-[#2d3134] rounded-[50%] bg-[#2d3134]"><img
+                            src="./img/right-arrow.png"></a>
+                </div>
+            </div>
+            <div>
+                <div class="lg:flex  lg:flex-row lg:justify-between flex flex-col  justify-center ">
+                    <div class="">
+
+                        <div class=" lg:w-flex justify-center items-center lg:flex  flex   flex-col  mt-5">
+                            <img class="lg:w-[170px] h-[230px] rounded-[85px] " src="./img/img-2.png">
+                            <span
+                                class="lg:flex lg:justify-center lg:items-center justify-center lg:py-5 font-[500] font-inter text-[#2d3134] leading-[26px]  text-[26px]">Beach</span>
+                        </div>
+
+                    </div>
+                    <div class="">
+
+                        <div class=" lg:w-flex justify-center items-center  lg:flex  flex   flex-col  mt-5">
+                            <img class="w-[170px] h-[230px] rounded-[85px]" src="./img/img-3.png">
+                            <span
+                                class="flex justify-center items-center py-5 font-[500] font-inter text-[#2d3134] leading-[26px]  text-[26px]">Desert</span>
+                        </div>
+
+                    </div>
+                    <div class="">
+
+                        <div class=" w-flex justify-center lg:flex flex   flex-col  mt-5 ">
+                            <img class=" w-[170px] h-[230px] rounded-[85px] object-cover mx-auto " src="
+                            ./img/img-4.png">
+                            <span
+                                class="flex justify-center items-center py-5 font-[500] font-inter text-[#2d3134] leading-[26px]  text-[26px]">Mountain</span>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="">
+
+                        <div class=" w-flex justify-center items-center  lg:flex   flex  flex-col  mt-5">
+                            <img class=" w-[170px] h-[230px] rounded-[85px] object-fit-cover" src="./img/img-5.png">
+                            <span
+                                class="flex justify-center items-center py-5 font-[500] font-inter text-[#2d3134] leading-[26px]  text-[26px]">Temple</span>
+                        </div>
+
+                    </div>
+                    <div class="">
+
+                        <div class=" w-flex justify-center items-center   lg:flex  flex  flex-col  mt-5 ">
+                            <img class="w-[170px] h-[230px] rounded-[85px]" src="./img/img-6.png">
+                            <span
+                                class="flex justify-center items-center py-5 font-[500] font-inter text-[#2d3134] leading-[26px]  text-[26px]">Tower</span>
+                        </div>
+
+                    </div>
+
+                    <div class="">
+
+                        <div class=" w-flex justify-center items-center  lg:flex   flex  flex-col  mt-5 ">
+                            <img class=" w-[170px] h-[230px] rounded-[85px]" src="./img/img-7.png">
+                            <span
+                                class="flex justify-center items-center py-5 font-[500] font-inter text-[#2d3134] leading-[26px]  text-[26px]">Pyramid</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <section class="overflow-hidden">
+            <div class="flex gap-5 max-md:flex-col">
+                <div class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+                    <img loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/1068a1cc936a43938f2bbc791c3f802f4a3ffc0f2bfc0b660efd77a05c3e4671?placeholderIfAbsent=true&apiKey=b4f856c1c604445cb9f5b3b4a2658ac0"
+                        alt="Our experience in adventure stories"
+                        class="object-contain grow w-full rounded-none aspect-[0.93] max-md:mt-10 max-md:max-w-full" />
+                </div>
+                <div class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+                    <div class="flex flex-col items-start mt-16 w-full max-md:mt-10 max-md:max-w-full">
+                        <h2 class="text-xl font-semibold leading-none text-red-400 tracking-[4px]">Our Experience</h2>
+                        <h3
+                            class="mt-5 text-6xl font-semibold leading-[66px] text-zinc-800 max-md:max-w-full max-md:text-4xl max-md:leading-[53px]">
+                            Our Stories Have Adventures</h3>
+                        <p class="mt-5 text-base leading-7 text-zinc-600 max-md:max-w-full">We are experienced in
+                            bringing adventures to stay their journey, with all outdoor destinations in the world as our
+                            specialties. Start your adventure now! Nature has already called you!</p>
+                        <div class="self-stretch mt-10 max-md:max-w-full">
+                            <div class="flex gap-5 max-md:flex-col">
+                                <article class="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
+                                    <div
+                                        class="flex flex-col grow px-7 py-7 w-full rounded-2xl bg-white bg-opacity-70 max-md:px-5 max-md:mt-5">
+                                        <h4 class="text-5xl font-semibold leading-none text-red-400 max-md:text-4xl">
+                                            12K+</h4>
+                                        <p class="mt-5 text-xl leading-7 text-neutral-400">Success Journey</p>
+                                    </div>
+                                </article>
+                                <article class="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
+                                    <div
+                                        class="flex flex-col grow items-start px-8 py-7 w-full rounded-2xl bg-white bg-opacity-70 max-md:px-5 max-md:mt-5">
+                                        <h4 class="text-5xl font-semibold leading-none text-red-400 max-md:text-4xl">16+
+                                        </h4>
+                                        <p class="mt-5 text-xl leading-7 text-neutral-400">Awards Winning</p>
+                                    </div>
+                                </article>
+                                <article class="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
+                                    <div
+                                        class="flex flex-col grow p-7 w-full rounded-2xl bg-white bg-opacity-70 max-md:px-5 max-md:mt-5">
+                                        <h4
+                                            class="self-start text-5xl font-semibold leading-none text-red-400 max-md:text-4xl">
+                                            20+</h4>
+                                        <p class="mt-5 text-xl leading-7 text-neutral-400">Years Of Experience</p>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--Popular destination-->
+        <div class="mt-[32px] lg:p-[52px] pb-0">
+            <div class="lg:flex lg:justify-between ">
+                <div class="">
+                    <p
+                        class="font-inter text-[#2D3134] font-[600] text-[30px] lg:text-[56px]  leading-[40px] lg:leading-[66px] lg:w-1/2 text-center">
+                        Find
+                        Popular
+                        Destinations
+                    </p>
+                </div>
+                <div class=" lg:flex lg:gap-5 mt-5 lg:mt-0 flex gap-8 align-items-center justify-center">
+                    <a id="custom-prev"
+                        class=" cursor-pointer border-[1px] w-[54px] h-[54px] border-[#2D3134] rounded-[50%] flex justify-center items-center  "><img
+                            src="./img/left-arrow.png"></a>
+                    <a id="custom-next"
+                        class="   cursor-pointer border-[1px] w-[54px] h-[54px] border-[#2D3134] rounded-[50%] flex justify-center items-center bg-[#2D3134] ml-5"><img
+                            src="./img/right-arrow.png"></a>
+
+                </div>
+
+            </div>
+
+            <!--card section-->
+
+
+
+            <!--- swiper slider -->
+
+            <div class=" mt-[35px] lg:w-full relative">
+
+                <div class=" swiper multiple-slide-carousel swiper-container relative">
+                    <!-- Swiper Wrapper -->
+                    <div class="swiper-wrapper mb-16">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div
+                                class="rounded-2xl  flex flex-col  p-[12px]  border-[2px] border-[#fff] bg-[#FAF8ED]   shadow-custom-shadow ;g:w-[386px]  lg:h-[440px]">
+                                <div class="lg:w-[362px] lg:h-[252px] rounded-[16px] ">
+                                    <img src="./img/slider-1.png">
+                                </div>
+                                <div class="mt-[24px] text-left px-[12px]">
+                                    <p
+                                        class="text-[#2d3134] font-inter font-[600] text-[24px] leading-[24px] text-center ">
+                                        Mountain
+                                        Hiking Tour</p>
+                                    <p
+                                        class="text-[#5b5f62] font-inter font-[400] text-[14px]  mt-[14px] leading-[14px] text-center">
+                                        Mountain
+                                        Hiking Tour</p>
+                                </div>
+                                <div class="flex justify-between px-[12px] mt-[24px]">
+                                    <p class="font-inter text-[24px] font-[600] leading-[20px] text-[#2d3134]">$89
+                                        <span
+                                            class="font-inter text-[16px] font-[400] leading-[20px] text-[#5b5f62]">/person</span>
+                                    </p>
+                                    <button
+                                        class="w-[100px] border-[1px] border-[#2d3134]  h-[37px] rounded-[46px] hover:text-[#fff] font-inter text-[14px] font-[400]  hover:bg-[#2D3134] leading-[14px]">Book
+                                        Now</button>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- slide-2-->
+                        <div class="swiper-slide">
+                            <div
+                                class="rounded-2xl  flex flex-col  p-[12px]  border-[2px] border-[#fff] bg-[#FAF8ED]    shadow-custom-shadow lg:w-[386px]  lg:h-[440px] w-[100%]">
+                                <div class="lg:w-[362px] lg:h-[252px] rounded-[16px] ">
+                                    <img src="./img/slider-2.png">
+                                </div>
+                                <div class="mt-[24px] lg:text-left lg:px-[12px] text-center ">
+                                    <p class="text-[#2d3134] font-inter font-[600] text-[24px] leading-[24px]">Machu
+                                        Picchu, Peru</p>
+                                    <p
+                                        class="text-[#5b5f62] font-inter font-[400] text-[14px]  mt-[14px] leading-[14px]">
+                                        Machu Picchu, Peru</p>
+                                </div>
+                                <div class="lg:flex  lg:flex-row lg:justify-between px-[12px] mt-[24px] flex ">
+                                    <p class="font-inter text-[24px] font-[600] leading-[20px] text-[#2d3134]">$99
+                                        <span
+                                            class="font-inter text-[16px] font-[400] leading-[20px] text-[#5b5f62]">/person</span>
+                                    </p>
+                                    <button
+                                        class="w-[100px] border-[1px] border-[#2d3134]  h-[37px] rounded-[46px] hover:text-[#fff] font-inter text-[14px] font-[400]  hover:bg-[#2D3134] leading-[14px]">Book
+                                        Now</button>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- slide-3-->
+                        <div class="swiper-slide">
+                            <div
+                                class="rounded-2xl  flex flex-col  p-[12px]  border-[2px] border-[#fff] bg-[#FAF8ED]   shadow-custom-shadow lg:w-[386px]  lg:h-[440px] w-[100%] ">
+                                <div class="lg:w-[362px] lg:h-[252px]  rounded-[16px] ">
+                                    <img class="" src="./img/slider-3.png">
+                                </div>
+                                <div class="mt-[24px] text-left px-[12px]">
+                                    <p
+                                        class="text-[#2d3134] font-inter font-[600] text-[24px] leading-[24px] text-center">
+                                        The Grand
+                                        Canyon, Arizona</p>
+                                    <p
+                                        class="text-[#5b5f62] font-inter font-[400] text-[14px]  mt-[14px] leading-[14px] text-center">
+                                        Mountain
+                                        Hiking Tour</p>
+                                </div>
+                                <div class="lg:flex  flex  gap-10 lg:justify-between px-[12px] mt-[24px]">
+                                    <p class="font-inter text-[24px] font-[600] leading-[20px] text-[#2d3134]">$70
+                                        <span
+                                            class="font-inter text-[16px] font-[400] leading-[20px] text-[#5b5f62]">/person</span>
+                                    </p>
+                                    <button
+                                        class="w-[100px] border-[1px] border-[#2d3134]  h-[37px] rounded-[46px] hover:text-[#fff] font-inter text-[14px] font-[400]  hover:bg-[#2D3134] leading-[14px]">Book
+                                        Now</button>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- slide-4-->
+                        <div class="swiper-slide">
+                            <div
+                                class="rounded-2xl  flex flex-col  lg:p-[12px]  border-[2px] border-[#fff] bg-[#FAF8ED]   shadow-custom-shadow  lg:w-[386px]  lg:h-[440px] w-[100%]">
+                                <div class="lg:w-[362px] lg:h-[252px] rounded-[16px] w-[250px] h-[200px]">
+                                    <img class="lg:w-[362px] lg:h-[252px] w-[250px] h-[200px] lg:rounded-[16px] rounded-[16px]"
+                                        src="./img/slider-4.jpg">
+                                </div>
+                                <div class="mt-[24px] text-left px-[12px] rounded-[16px]">
+                                    <p
+                                        class="text-[#2d3134] font-inter font-[600] text-[24px] leading-[24px] text-center">
+                                        Rome,
+                                        Italy</p>
+                                    <p
+                                        class="text-[#5b5f62] font-inter font-[400] text-[14px]  mt-[14px] leading-[14px] text-center">
+                                        Mountain
+                                        Hiking Tour</p>
+                                </div>
+                                <div class="flex justify-between px-[12px] mt-[24px]">
+                                    <p class="font-inter text-[24px] font-[600] leading-[20px] text-[#2d3134]">$99
+                                        <span
+                                            class="font-inter text-[16px] font-[400] leading-[20px] text-[#5b5f62]">/person</span>
+                                    </p>
+                                    <button
+                                        class="w-[100px] border-[1px] border-[#2d3134]  h-[37px] rounded-[46px] hover:text-[#fff] font-inter text-[14px] font-[400]  hover:bg-[#2D3134] leading-[14px]">Book
+                                        Now</button>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+
+        <!-- image gallry-->
+
+        <div class="">
+            <div class="text-center">
+                <p
+                    class=" font-inter lg:text-[56px] text-[30px]  leading-[33px] font-[600] lg:leading-[66px] text-[#2D3134]">
+                    Top
+                    Destinations</p>
+                <p class=" font-inter text-[16px] font-[400] leading-[16px] text-[#5b5f62] mt-[16px]"> Sost Brilliant
+                    reasons
+                    Entrada should be your one-stop-shop!</p>
+                <div
+                    class="mt-[28px] lg:gap-[14px] lg:flex  flex-wrap lg:flex-row flex  gap-5  align-items-center justify-center">
+
+
+                    <button data-filter="all" class=" filter-button w-auto h-auto px-[20px] py-[10px] rounded-[30px] border-[1px]
+                        text-[#2D3134] border-[#3d3d3d] hover:bg-[#2d3134] hover:text-[#fff] font-poppins text-[14px]
+                        font-[400] leading-[14px] text-center ">All</button>
+
+                    <button data-filter="London"
+                        class=" filter-button w-auto h-auto px-[20px] py-[10px] rounded-[30px] border-[1px] text-[#2D3134] border-[#3d3d3d] hover:bg-[#2d3134] 
+                        hover:text-[#fff] font-poppins text-[14px] font-[400] leading-[14px] text-center">London</button>
+
+                    <button data-filter="Bangkok" class=" filter-button w-auto h-auto px-[20px] py-[10px] rounded-[30px] border-[1px]
+                        text-[#2D3134] border-[#3d3d3d] hover:bg-[#2d3134] hover:text-[#fff] font-poppins text-[14px]
+                        font-[400] leading-[14px] text-center ">Bangkok</button>
+
+                    <button data-filter="England" class=" filter-button w-auto h-auto px-[20px] py-[10px] rounded-[30px] border-[1px]
+                        text-[#2D3134] border-[#3d3d3d] hover:bg-[#2d3134] hover:text-[#fff] font-poppins text-[14px]
+                        font-[400] leading-[14px] text-center ">England</button>
+
+                    <button data-filter="Singapore" class=" filter-button w-auto h-auto px-[20px] py-[10px] rounded-[30px] border-[1px]
+                        text-[#2D3134] border-[#3d3d3d] hover:bg-[#2d3134] hover:text-[#fff] font-poppins text-[14px]
+                        font-[400] leading-[14px] text-center ">Singapore</button>
+
+                    <button data-filter="Italy" class=" filter-button w-auto h-auto px-[20px] py-[10px] rounded-[30px] border-[1px]
+                        text-[#2D3134] border-[#3d3d3d] hover:bg-[#2d3134] hover:text-[#fff] font-poppins text-[14px]
+                        font-[400] leading-[14px] text-center ">Italy</button>
+
+                </div>
+            </div>
+
+            <div class=" lg:flex lg:gap-[30px] justify-center py-[51px]">
+                <div class="lg:flex lg:flex-col gap-[26px]">
+
+                    <div
+                        class="bg-[url('./img/g1.png')] bg-cover bg-center lg:w-[270px]  w-auto lg:h-[250px] gap-28 flex flex-col filter-item London ">
+
+                        <span
+                            class=" m-[24px]  px-[5px] items-center justify-center lg:flex w-[42px] h-[24px] bg-[#fff] rounded-[30px] font-inter text-[16px] font-[400] leading-[16px] text-[#5b5f62]">3.5</span>
+                        <span class="mx-[24px] gap-2 flex flex-col">
+                            <p class="text-[#fff] font-inter text-[20px] font-[600] leading-[20px]">Vientnam</p>
+                            <p class="text-[#fff] font-inter text-[14px] font-[400] leading-[14px]">Worefall</p>
+                        </span>
+                    </div>
+                    <div
+                        class="bg-[url('./img/g2.png')] bg-cover bg-center w-[270px] h-[250px]   mt-[20px] lg:mt-0 lg:gap-28  gap-28 flex flex-col lg:flex lg:flex-col filter-item Bangkok ">
+                        <span
+                            class=" m-[24px]  px-[5px] items-center justify-center  flex flex-col lg:flex w-[42px] h-[24px] bg-[#fff] rounded-[30px] font-inter text-[16px] font-[400] leading-[16px] text-[#5b5f62]">3.5</span>
+                        <span class="mx-[24px] gap-2 flex flex-col">
+                            <p class="text-[#fff] font-inter text-[20px] font-[600] leading-[20px]">Vientnam</p>
+                            <p class="text-[#fff] font-inter text-[14px] font-[400] leading-[14px]">Worefall</p>
+                        </span>
+
+                    </div>
+                </div>
+
+                <div
+                    class="bg-[url('./img/g3.png')] bg-cover bg-center lg:w-[370px] mt-[20px] lg:mt-0 lg:h-[526px] lg:gap-96  gap-96 lg:flex lg:flex-col flex  flex-col filter-item England ">
+
+                    <span
+                        class=" m-[24px]  px-[5px] items-center justify-center flex w-[42px] h-[24px] bg-[#fff] rounded-[30px] font-inter text-[16px] font-[400] leading-[16px] text-[#5b5f62]">3.5</span>
+                    <span class="mx-[24px] gap-2 flex flex-col">
+                        <p class="text-[#fff] font-inter text-[20px] font-[600] leading-[20px]">Vientnam</p>
+                        <p class="text-[#fff] font-inter text-[14px] font-[400] leading-[14px]">Worefall</p>
+                    </span>
+                </div>
+
+                <div class=" flex flex-col gap-[13px]">
+
+                    <div
+                        class="bg-[url('./img/g4.png')] bg-cover bg-center lg:w-[470px] lg:h-[250px]  lg:mt-0 mt-[20px] w-auto h-auto lg:gap-28 gap-[100px] lg:flex  flex flex-col filter-item Singapore ">
+                        <span
+                            class=" m-[24px]  px-[5px] items-center justify-center flex w-[42px] h-[24px] bg-[#fff] rounded-[30px] font-inter text-[16px] font-[400] leading-[16px] text-[#5b5f62]">3.5</span>
+                        <span class="mx-[24px] gap-2 flex flex-col">
+                            <p class="text-[#fff] font-inter text-[20px] font-[600] leading-[20px]">Vientnam</p>
+                            <p class="text-[#fff] font-inter text-[14px] font-[400] leading-[14px]">Worefall</p>
+                        </span>
+
+
+                    </div>
+                    <div class="flex flex-wrap gap-[30px]">
+                        <div
+                            class="bg-[url('./img/g5.png')] bg-cover bg-center w-[170px] h-[263px] flex flex-col gap-28  filter-item Italy">
+
+                            <span
+                                class=" m-[24px]  px-[5px] items-center justify-center flex w-[42px] h-[24px] bg-[#fff] rounded-[30px] font-inter text-[16px] font-[400] leading-[16px] text-[#5b5f62]">3.5</span>
+                            <span class="mx-[24px] gap-2 flex flex-col">
+                                <p class="text-[#fff] font-inter text-[20px] font-[600] leading-[20px]">Vientnam
+                                </p>
+                                <p class="text-[#fff] font-inter text-[14px] font-[400] leading-[14px]">Worefall
+                                </p>
+                            </span>
+                        </div>
+                        <div
+                            class="bg-[url('./img/g6.png')] bg-cover bg-center w-[270px] h-[263px]   flex flex-col gap-28 filter-item London">
+
+                            <span
+                                class=" m-[24px]  px-[5px] items-center justify-center flex w-[42px] h-[24px] bg-[#fff] rounded-[30px] font-inter text-[16px] font-[400] leading-[16px] text-[#5b5f62]">3.5</span>
+                            <span class="mx-[24px] gap-2 flex flex-col">
+                                <p class="text-[#fff] font-inter text-[20px] font-[600] leading-[20px]">Vientnam
+                                </p>
+                                <p class="text-[#fff] font-inter text-[14px] font-[400] leading-[14px]">Worefall
+                                </p>
+                            </span>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- Include Swiper JS  TESTIMONAIL-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+
+
+    <script>
+
+        //for the  image gallary filter
+        document.querySelectorAll('.filter-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+                document.querySelectorAll('.filter-item').forEach(item => {
+                    item.classList.toggle('hidden', filter !== 'all' && !item.classList.contains(filter));
+                });
+            });
+        });
+
+    </script>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Initialize Swiper without default navigation buttons
+            var swiper = new Swiper(".multiple-slide-carousel", {
+                loop: true,
+                slidesPerView: 3,
+                spaceBetween: 20,
+                navigation: false, // Disable default buttons
+                breakpoints: {
+                    1920: { slidesPerView: 3, spaceBetween: 30 },
+                    1028: { slidesPerView: 2, spaceBetween: 30 },
+                    990: { slidesPerView: 1, spaceBetween: 0 },
+                    390: { slidesPerView: 1, spaceBetween: 20 }
+                }
+            });
+
+            // Custom Button Functionality
+            document.getElementById("custom-prev").addEventListener("click", () => swiper.slidePrev());
+            document.getElementById("custom-next").addEventListener("click", () => swiper.slideNext());
+        });
+    </script>
+
+
+</body>
+
+</html>
